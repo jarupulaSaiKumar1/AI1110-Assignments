@@ -1,0 +1,98 @@
+
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp, gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+                               
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+\makeatletter
+\newenvironment<>{proofs}[1][\proofname]{%
+    \par
+    \def\insertproofname{#1\@addpunct{.}}%
+    \usebeamertemplate{proof begin}#2}
+  {\usebeamertemplate{proof end}}
+\makeatother
+
+\title{Assignment 2}
+\author{JARUPULA SAI KUMAR (CS21BTECH11023)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+%Question
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}{ICSE 2018 Grade 12 Question viii:} 
+        Find the differential equation of the family of concentric circles $x^2+ y^2 = a^2$
+    \end{block}
+\end{frame}
+
+%Solution
+\section{Solution}
+\begin{frame}{Solution}
+   Given, family of concentric circle is $x^2+ y^2 = a^2$\\
+    Here it is given that the circle is concentric.So lets Differentiate w.r.t x
+\end{frame}
+
+\begin{frame}{Differentiating w.r.t x we get,}
+\begin{align}
+2x +2y\frac{dy}{dx} &= 0\\
+2y\frac{dy}{dx} &=-2x
+\end{align}
+this can also be written as,
+\begin{align}
+\frac{dy}{dx} &=\frac{-2x}{2y}\\
+\frac{dy}{dx} &=\frac{-x}{y}
+\end{align}
+this can also be written as,
+\begin{align}
+x+y\frac{dy}{dx} &=0
+\end{align}
+\end{frame}
+
+
+\end{document}
