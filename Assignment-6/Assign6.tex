@@ -1,0 +1,129 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{csquotes}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\let\vec\mathbf
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+ \title{\textbf{Assignment 6\\ \Large AI1110: Probability and Random Variables \\ \large Indian Institute of Technology, Hyderabad}}
+     \author{JARUPULA SAI KUMAR \\
+     CS21BTECH11023\\}
+     
+     \begin{document}
+     \maketitle
+     \textbf{Question:}The readings of a voltmeter introduces an error $nu$ with mean $0$. We wish to estimate its standard deviation $\sigma$. We measure a calibrated source V = 3 V four times and obtain the values $ 2.90, 3.15 , 3.05, 2.96 $ Assuming that $\nu$ is normal, find the 0.95 confidence interval of $\sigma$.
+      \end{block}
+      
+\end{frame}\\
+\begin{block}{Solution}
+        So,We are having 4 observations like  $ 2.90, 3.15 , 3.05, 2.96 $ where,are the expected values for each are $ 3.00 $. \\
+        Also, $ 0.95 $ level of confidence for $\sigma$ is nothing but an interval between $ 0.025 , 0.975 $. 
+       \end{block}
+\end{frame}
+
+
+
+
+    \begin{block}{}
+            The Confidence interval for the variance is given by:
+            
+               \begin{align}
+                   \frac{k}{\chi^{2}_{0.025}} > \sigma^{2} > \frac{k}{\chi^{2}_{0.975}}
+                   \label{form_1}
+               \end{align}
+               
+    \end{block}
+\end{frame}
+
+
+
+
+    \begin{block}{}
+         $\chi^{2}_{0.025}$ and $\chi^{2}_{0.975}$ can be calculated respectively from Fig\ref{fig:my_label1} and Fig\ref{fig:my_label2} for values of v = $4$ and the critical probability from above 
+         
+         \begin{align}
+             \chi^{2}_{0.025} &= 0.484  \\
+             \chi^{2}_{0.975} &= 11.143
+         \end{align}
+         
+    \end{block}
+
+\begin{frame}{}
+    \begin{block}{}
+       the value of k is given by n$\times$v \\
+       where v is the variance of the observations and n is the no of observations
+       
+       \begin{align*}
+           k= 4\brak{ (2.90 - 3.00)^{2} + (3.15 - 3.00)^{2} + (3.05 - 3.00)^{2} + (2.96 - 3.00)^{2} }
+       \end{align*}
+       
+       which on calculating we will get 
+       
+       \begin{align}
+           k = 0.0366
+       \end{align}
+       
+    \end{block}
+\end{frame}
+
+
+
+\begin{frame}
+
+     \begin{figure}
+           \centering
+           \includegraphics[width= 10cm, height=7cm]{fig1.png}
+           \caption{ lower tail critical values of ${\chi}^{2}$ with v degrees of freedom }
+          \label{fig:my_ label1}
+      \end{figure}
+      
+\end{frame}
+
+
+
+\begin{frame}
+
+     \begin{figure}
+           \centering
+           \includegraphics[width= 10cm, height=7cm]{fig2.png}
+           \caption{{ lower tail critical values of ${\chi}^{2}$ with v degrees of freedom }}
+           \label{fig:my_label2}
+      \end{figure}
+      
+\end{frame}
+
+
+
+\begin{}{Substituting and solving}
+     \begin{block}{Solving}
+        On substituting all values in Eq\eqref{form_1} we will get
+        
+        \begin{align}
+            \frac{0.0366}{0.484} > \sigma^{2} > \frac{0.0366}{11.143}
+            \label{form_2}
+        \end{align}
+        
+        on simplyfying Eq\eqref{form_2} we will get
+        
+        \begin{align}
+           0.275  > \sigma > 0.057 
+        \end{align}
+        
+        or simply
+        
+        \begin{align}
+            0.057 < \sigma < 0.275
+        \end{align}
+        
+     \end{block}
+\end{frame}
+
+
+
+\end{document}
