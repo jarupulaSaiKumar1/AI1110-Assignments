@@ -1,0 +1,78 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{csquotes}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\let\vec\mathbf
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+
+
+     \title{Assignment 7}
+     \author{JARUPULA SAI KUMAR \\
+     CS21BTECH11023 }
+     \date{\today}
+\logo{\large \LaTeX{}}
+     
+     \begin{document}
+     \begin{frame}
+     \maketitle    
+     \end{frame}
+     
+     \logo{}
+     
+     \begin{frame}{Outline}
+    \tableofcontents
+     \end{frame}
+      \section{Question}
+      \begin{frame}
+          
+
+      \textbf{Question:}The random variable $X$ has the Erlang density $f(x)~c^{4}.x^{3}.e^{-cx}$. We observe the samples $X_{i} = 3.1, 3.4.3.3$ Find the ML estimate c.\\
+           \end{frame}
+           
+         \section{Solution:}
+         \begin{frame}
+             \textbf{Solution:}Lets generalize and find ML.Lets take for $n$
+     random values the p.d.f will be
+     \begin{align}
+         &f(x,c)=c^{4}.x^{3}.e^{-cx}\\
+         &f(x_{1},x_{2},x_{3},..x_{n},c)=c^{4n}.(x_{1}..x_{n})^{3}.e^{-nc\hat{x}}
+         \end{align}
+         \end{frame}
+         \begin{frame}
+             Where $\hat{x}$ is the mean of random variable $X$.\\
+         Now to find ML of this function partially differentiate it w.r.t $c$.
+         \begin{align}
+             &\frac{\partial f(X,c)}{\partial c}=\frac{\partial c^{4n}.(x_{1}..x_{n})^{3}.e^{-n^c\hat{x}}}{\partial c}\\
+             &\frac{\partial f(X,c)}{\partial c}=n.c^{4n-1}.x^{3}e^{-cn\hat{x}}(4-c\hat{x})
+         \end{align}
+         \end{frame}
+         \begin{frame}
+             for ML equate partial differentiation to zero and that value is the estimate of c,
+         \begin{align}
+             n.c^{4n-1}.x^{3}e^{-cn\hat{x}}(4-c\hat{x})=0\\
+             4-c\hat{x}=0\\
+             c=\frac{4}{\hat{x}}
+         \end{align}
+         
+         \end{frame}
+         \begin{frame}
+          given $X_{i} = 3.1, 3.4.3.3,$
+         \begin{align}
+        \hat{x}&=\frac{3.1+3.3+3.4}{3}\\
+              \hat{x}&=3.27
+         \end{align}
+             Now,
+         \begin{align}
+         c&=\frac{4}{\hat{x}}\\
+         c&=\frac{4}{3.27}\\
+         c&=1.224.
+         \end{align}
+         \end{frame}
+     \end{document}
